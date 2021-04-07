@@ -27,6 +27,7 @@ public class TestBase {
     void afterEach() {
         attachScreenshot("Last screenshot");
         attachPageSource();
+        attachAsText("Browser console logs", getConsoleLogs());
         attachVideo();
         closeWebDriver();
     }

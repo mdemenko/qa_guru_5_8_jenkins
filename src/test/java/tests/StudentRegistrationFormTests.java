@@ -1,6 +1,10 @@
 package tests;
 
 import com.github.javafaker.Faker;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -19,6 +23,9 @@ public class StudentRegistrationFormTests extends TestBase {
             currentAddress = faker.address().fullAddress();
 
     @Test
+    @DisplayName("Testing student can register")
+    @Severity(SeverityLevel.CRITICAL)
+    @Owner("Max Demenko")
     void studentCanRegister() {
         step("Open registration form", () -> {
             open("https://demoqa.com/automation-practice-form");
